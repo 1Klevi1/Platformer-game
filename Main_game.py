@@ -1,10 +1,6 @@
-"""
-Example code showing how to create a button,
-and the three ways to process button events.
-"""
 import arcade
 import arcade.gui
-
+from Levels import Levels
 
 # --- Method 1 for handling click events,
 # Create a child class.
@@ -58,7 +54,8 @@ class MyWindow(arcade.View):
         )
 
     def on_click_start(self, event):
-        print("Start:", event)
+        levels_view = Levels()
+        window.show_view(levels_view )
 
     def on_draw(self):
         self.clear()
