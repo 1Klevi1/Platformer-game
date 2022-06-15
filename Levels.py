@@ -1,5 +1,9 @@
 import arcade
 import arcade.gui
+from arcade import Window
+
+from Main_game import Main_game
+
 
 class Levels(arcade.View):
     def __init__(self):
@@ -16,6 +20,7 @@ class Levels(arcade.View):
 
         first_level=arcade.gui.UIFlatButton(text=" 1 ", width=200)
         self.H_box.add(first_level.with_space_around(bottom=20))
+        first_level.on_click = self.on_click_first_level
 
         second_level=arcade.gui.UIFlatButton(text=" 2 ",width=200)
         self.H_box.add(second_level.with_space_around(bottom=20))
@@ -29,7 +34,9 @@ class Levels(arcade.View):
                 child=self.all_box)
             )
     def on_click_first_level(self, event):
-        print("Start:", event)
+        main_game_view = Main_game()
+        arcade.Window.show_view(self.window,main_game_view)
+
 
     def on_draw(self):
         self.clear()
