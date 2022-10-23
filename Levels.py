@@ -24,6 +24,7 @@ class Levels(arcade.View):
 
         second_level=arcade.gui.UIFlatButton(text=" 2 ",width=200)
         self.H_box.add(second_level.with_space_around(bottom=20))
+        second_level.on_click = self.on_click_second_level
 
         self.all_box.add(self.v_box)
         self.all_box.add(self.H_box)
@@ -37,6 +38,9 @@ class Levels(arcade.View):
         main_game_view = Main_game()
         arcade.Window.show_view(self.window,main_game_view)
 
+    def on_click_second_level(self,event):
+        main_game_view=Main_game()
+        arcade.Window.show_view(self.window, main_game_view)
 
     def on_draw(self):
         self.clear()
