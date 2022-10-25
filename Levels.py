@@ -10,6 +10,7 @@ class Levels(arcade.View):
         super().__init__()
         self.manager = arcade.gui.UIManager()
         self.manager.enable()
+
         arcade.set_background_color(arcade.color.DARK_BLUE_GRAY)
         self.all_box=arcade.gui.UIBoxLayout()
         self.v_box=arcade.gui.UIBoxLayout()
@@ -34,7 +35,7 @@ class Levels(arcade.View):
                 anchor_y="top",
                 child=self.all_box)
             )
-    def on_click_first_level(self, event):
+    def on_click_first_level(self,event):
         main_game_view = Main_game()
         arcade.Window.show_view(self.window,main_game_view)
 

@@ -1,5 +1,7 @@
 import arcade
 import arcade.gui
+
+import Levels
 from Levels import *
 from Main_game import *
 
@@ -54,8 +56,8 @@ class MyWindow(arcade.View):
                 child=self.v_box)
         )
     def on_click_start(self, event):
-        levels_view = Levels()
-        window.show_view(levels_view)
+        # levels_view = Levels()
+        window.show_view(Levels.Levels())
 
     def on_draw(self):
         self.clear()

@@ -1,5 +1,9 @@
 import arcade
 import arcade.gui
+
+import Levels
+from Levels import *
+
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
 SCREEN_TITLE = "Platformer"
@@ -50,8 +54,11 @@ class Main_game(arcade.View):
         """Set up the game here. Call this function to restart the game."""
 
         # Name of map file to load
-
+        # if Levels.Levels.on_click_first_level() is True:
         map_name = ":resources:tiled_maps/map.json"
+        # elif Levels.Levels.on_click_second_level() is True:
+        #     map_name = ":resources:tiled_maps/map2_level_1.json"
+
 
         # Layer specific options are defined based on Layer names in a dictionary
 
